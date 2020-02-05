@@ -86,9 +86,13 @@ Dans le fichier `frontend/src/Containers/TicketContainer/TickerContainer.js`, aj
 
     import HelloWorldTicket from 'Components/Tickets/HelloWorld/HelloWorldTicket';
 
-Puis, à la ligne 40, instanciez un élément `HelloWorldTicket`:
+À la ligne 16 environ, ajouter votre nouveau ticket à la liste des tickets possibles:
 
-            <HelloWorldTicket onLoaded={this.onLoaded.bind(this)}/>
+```
+  {
+    content: (onError, onLoaded) => <HelloWorldTicket onError={onError} onLoaded={onLoaded}/>
+  }  
+```
 
 ### Etape 3: Ecrire le code de votre ticket
 
