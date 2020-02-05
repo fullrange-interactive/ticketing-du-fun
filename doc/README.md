@@ -18,7 +18,7 @@ Le Raspberry Pi est pré-configuré. Cependant, il faut configurer l'URL du Rend
 
 Vous pouvez vous connecter par SSH au Raspberry Pi ou le brancher sur un écran pour modifier ce fichier.
 
-### Renderer
+### Renderer
 
 #### PDF Headless Rendering
 
@@ -74,13 +74,13 @@ Créer un ticket est très simple! Tous les tickets sont des composants React.
 
 Nous allons partir sur un exemple "Hello World". 
 
-### Etape 1: Créer le dossier
+### Etape 1: Créer le dossier
 
 Créez un dossier `HelloWorldTicket` dans `frontend/src/Components/Tickets/`
 
 Créez un fichier `HelloWorldTicker.js` et sa stylesheet associée `HelloWorldTicker.scss`
 
-### Etape 2: Include le fichier
+### Etape 2: Include le fichier
 
 Dans le fichier `frontend/src/Containers/TicketContainer/TickerContainer.js`, ajouter le code suivant en en-tête du fichier
 
