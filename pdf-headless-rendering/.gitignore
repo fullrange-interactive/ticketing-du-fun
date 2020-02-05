@@ -1,0 +1,5 @@
+*.crt
+*.pem
+node_modules
+npm-debug.log
+src/Config.mjs

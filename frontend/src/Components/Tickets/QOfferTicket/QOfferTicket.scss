@@ -1,0 +1,41 @@
+.qoffer-ticket {
+
+  .offerImage {
+
+    width: 100%;
+
+  }
+
+  .title{
+
+    text-align: center;
+    margin-bottom: 5px;
+
+  }
+
+  .catchline{
+
+    margin-top: 5px;
+    text-align: center;
+
+  }
+
+  .stockPercent{
+
+    font-size: 22pt;
+    text-align: center;
+
+
+  }
+
+}
+
+@media print 
+{
+   @page
+   {
+    size: 8cm 14cm;
+    margin: 1cm;
+  }
+
+}

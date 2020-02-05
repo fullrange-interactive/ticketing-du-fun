@@ -1,0 +1,20 @@
+'use strict';
+
+class Config{
+
+  static get apiBaseUrl(){
+
+    return '/api';
+
+  }  
+
+  static get srvPort(){
+
+    return 8080;
+
+  }
+
+  
+}
+
+export default Config;
