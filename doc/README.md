@@ -14,9 +14,62 @@ Le Raspberry Pi n'est pas capable de faire tourner Puppeteer. C'est pourquoi le 
 
 ### Raspberry Pi
 
-Le Raspberry Pi est pré-configuré. Cependant, il faut configurer l'URL du Renderer. Ceci est fait dans le fichier `printTicket.sh` situé dans le dossier `/home/pi/printing/`
+Le Raspberry Pi est pré-configuré. Cependant, il faut configurer l'URL du Renderer. Ceci est fait dans le fichier `printTicket.sh` situé dans le dossier `/home/pi/qoqa-ticketing-du-fun/printing/`
 
-Vous pouvez vous connecter par SSH au Raspberry Pi ou le brancher sur un écran pour modifier ce fichier.
+Pour modifier ce fichier:
+
+1. Connectez un clavier et un écran au Raspberry Pi
+2. Redémarrez le Pi en tirant la prise et rebranchant
+3. Une fois que le Pi a booté, vous aurez accès à un terminal. Vous pouvez saisir les commandes suivantes
+
+```
+cd ~/qoqa-ticketing-du-fun/printing
+nano printTicket.sh
+```
+
+Pour sauvegarder, faites CTRL+O puis quittez avec CTRL+X
+
+Pour tester une impression, saisissez la commande suivante
+
+```
+./printTicket.sh
+```
+
+Vous pouvez modifier l'orientation de l'impression en modifiant la commande dans `printTicket.sh`:
+
+***Pour imprimer en petit***
+```
+lp -d EPSON_TM-T20II -o fit-to-page random
+```
+
+***Pour imprimer en grand***
+```
+lp -d EPSON_TM-T20II random
+```
+
+#### Modifier l'adresse IP du Pi
+Le Pi doit être dans le même sous-réseau que le serveur de Renderer. Pour changer les paramètres du réseau du Pi:
+
+```
+sudo nano /etc/dhcpcd.conf
+```
+
+Ensuite, dans les lignes ~40, vous pouvez mettre le Pi en IP fixe:
+```
+# Example static IP configuration:
+interface eth0
+static ip_address=192.168.0.10/24
+#static ip6_address=fd51:42f8:caae:d92e::ff/64
+static routers=192.168.0.1
+```
+Ou alors le forcer en DHCP en commentant ces lignes:
+```
+# Example static IP configuration:
+#interface eth0
+#static ip_address=192.168.0.10/24
+#static ip6_address=fd51:42f8:caae:d92e::ff/64
+#static routers=192.168.0.1
+```
 
 ### Renderer
 
