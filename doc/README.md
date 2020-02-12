@@ -70,6 +70,11 @@ Ou alors le forcer en DHCP en commentant ces lignes:
 #static ip6_address=fd51:42f8:caae:d92e::ff/64
 #static routers=192.168.0.1
 ```
+À chaque modification de ce fichier, le plus simple est de reboot le Raspberry Pi:
+
+```
+sudo reboot
+```
 
 ### Renderer
 
@@ -79,7 +84,7 @@ Rendez-vous dans le dossier `pdf-headless-rendering`
 
     cd pdf-headless-rendering
 
-Installez les dépendences
+Installez les dépendences. ***ATTENTION: Sur Windows, il faut éxecuter cette commande depuis le programme CMD (ligne de commande standard de Windows). Si vous le faites depuis le terminal Linux fourni dans Windows 10, npm installera une version Linux de Chromium, qui ne fonctionnera pas.***
 
     npm install
 
@@ -131,11 +136,11 @@ Nous allons partir sur un exemple "Hello World".
 
 Créez un dossier `HelloWorldTicket` dans `frontend/src/Components/Tickets/`
 
-Créez un fichier `HelloWorldTicker.js` et sa stylesheet associée `HelloWorldTicker.scss`
+Créez un fichier `HelloWorldTicket.js` et sa stylesheet associée `HelloWorldTicket.scss`
 
 ### Etape 2: Include le fichier
 
-Dans le fichier `frontend/src/Containers/TicketContainer/TickerContainer.js`, ajouter le code suivant en en-tête du fichier
+Dans le fichier `frontend/src/Containers/TicketContainer/TicketContainer.js`, ajouter le code suivant en en-tête du fichier
 
     import HelloWorldTicket from 'Components/Tickets/HelloWorld/HelloWorldTicket';
 
@@ -159,7 +164,7 @@ import Tool from 'Classes/Tool';
 import Data from 'Data/data.json';
 
 import './HelloWorldTicket.scss';
-import 'Components/Tickets/Ticket.scss';
+import 'Components/Tickets/HelloWorldTicket.scss';
 
 class HelloWorldTicket extends Component {
 
